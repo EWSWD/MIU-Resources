@@ -1,0 +1,147 @@
+public int isAllposib(int[] a){
+   int l=a.length;
+   int ret=1;
+   if(l==1 && a[0]==0) ret=1; 
+   if(l>1){
+   for(int i=0;i<l;i++){
+     stop: if(a[i]<0 || a[i]>=l){
+         ret=0;
+         break stop;
+         }
+       else 
+          for(int j=i+1;j<l;j++){
+             if(a[i]==a[j]){
+                ret = 0;
+                break stop;
+                }
+                
+             }
+      }
+   }
+   return ret;
+}
+public int isLayered(int[] a){
+   int ret=1;
+   int l=a.length;
+   if(a[0]!=a[1] ||a[l-2]!=a[l-1]) ret=0;
+   for(int i=1;i<l-1;i++){
+      if(a[i]>a[i+1]) {
+         ret = 0;
+         break;
+         }
+         if(a[i]!=a[i+1] && a[i-1]!=a[i]){
+            ret=0;
+            break;
+            }
+      }
+   return ret;
+}
+public int isSorted(int[] a){
+   int l=a.length;
+   int ret=1;
+   if(l>2){
+      if(a[0]<a[1]){
+      for(int i=1;i<l-1;i++){
+         if(a[i]>a[i+1]){
+            ret = 0;
+            break;
+            }
+      }
+    else if(a[0]>a[1]){
+      for(int i=1;i<l-1;i++)
+         if(a[i]<a[i+1]){
+            ret=0;
+            break;
+            }
+      }
+   else if(a[0]==a[1]){
+      for(int i=1;i<l-1;i++){
+        if((a[i-1]<a[i] && a[i]>a[i+1])||(a[i-1]>a[i]&&a[i]<a[i+1]))
+           ret = 0;
+           break; 
+        }
+      }
+   }
+  }
+   return ret;
+}
+
+public int isBalanced(int[] a){
+   int l=a.length;
+   int ret=1;
+   for(int i=0;i<l;i++){
+      if((a[i]%2!=0 && i%2==0) ||(a[i]%2==0 && i%2!=0)){
+         ret=0;
+         break;
+      }
+   }
+   return ret;
+}
+
+public int isNormal(int n){
+   int ret=1;
+   for(int i=2;i<n;i++){
+      if(a[i]%2==0 && i%2!=0){
+         ret=0;
+         break;
+      }
+   }
+   return ret;
+}
+
+public char[] f(char[] a,int st,int len){
+   int l=a.length;
+   if(st<0 || len >=l) return null;
+   else
+   char[] ret =new char[len];
+   for(int i=0;i<len;i++){
+      ret[i] = a[i+st];
+   }
+   return ret;
+}
+
+public int isCumul(int[] a){
+   int ret=1;
+   int l=a.length;
+   int sum=0;
+   if(l<2) ret=0;
+   for(int i=1;i<l;i++){
+      for(int j=0;j<i;j++){
+         sum+=a[j];   
+      }
+         if(a[i]!=sum){
+            ret=0;
+            break;
+            }
+   }  
+   return ret; 
+ 
+}
+
+publiv int isOddHeavy(int[] a){
+   int l=a.length;
+   int ret=1;
+   for(int i=0;i<l;i++){
+      
+   }
+}     
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
